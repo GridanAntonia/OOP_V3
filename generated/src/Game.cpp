@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <random>
 
-Game* Game::instance = nullptr;
+Game *Game::instance = nullptr;
 
 std::vector<Country> Game::initialCountries = {
     Country("Afghanistan", "Kabul", Continent::ASIA, false),
@@ -191,18 +191,20 @@ Game::Game(const std::string &playername) : player(playername), currentLevel(0) 
     setLevels();
 }
 
-Game& Game::getInstance(const std::string &playername) {
+Game &Game::getInstance(const std::string &playername) {
     if (instance == nullptr) {
         instance = new Game(playername);
     }
     return *instance;
 }
+
 void Game::destroyInstance() {
     if (instance != nullptr) {
         delete instance;
         instance = nullptr;
     }
 }
+
 void Game::setLevels() {
     auto level1 = std::make_unique<LevelwithEuropeanCapitals>();
     for (const auto &country: initialCountries) {
@@ -246,13 +248,13 @@ void Game::setLevels() {
         std::shuffle(options.begin(), options.end(), std::mt19937(std::random_device()()));
 
         level4->addCountry(std::make_unique<MultipleChoiceCountry>(country.getName(), country.getCapital(),
-                                                            country.getContinent(), options, country.isPopular()));
+                                                                   country.getContinent(), options,
+                                                                   country.isPopular()));
     }
     levels.push_back(std::move(level4));
 }
 
 void Game::start() {
-
     std::cout << "Welcome, " << player << "!\n";
 
     while (currentLevel < levels.size()) {
@@ -294,7 +296,6 @@ void Game::start() {
                         CorrectQ++;
                         std::cout << "Correct! You now have " << player.getCurrentScore() << " points (Total: "
                                 << player.getTotalScore() << ").\n";
-
                     } else {
                         std::cout << "Wrong! ";
                         level->displayCorrectAnswer(currentCountry);

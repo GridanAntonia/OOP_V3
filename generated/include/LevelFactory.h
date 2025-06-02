@@ -12,16 +12,16 @@
 #include "MultipleChoiceCountry.h"
 
 enum class LevelType {
-  LevelCountryfromCapital,
-  LevelwithAllCapitals,
-  LevelwithContinents,
-  LevelwithEuropeanCapitals
+    LevelCountryfromCapital,
+    LevelwithAllCapitals,
+    LevelwithContinents,
+    LevelwithEuropeanCapitals
 };
 
 class LevelFactory {
 public:
     static std::shared_ptr<Level> CreateLevel(LevelType type) {
-        switch(type) {
+        switch (type) {
             case LevelType::LevelCountryfromCapital:
                 return std::make_shared<LevelCountryfromCapital>();
             case LevelType::LevelwithAllCapitals:

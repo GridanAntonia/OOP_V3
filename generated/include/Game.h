@@ -9,7 +9,7 @@
 
 class Game {
 private:
-    static Game* instance;
+    static Game *instance;
     Player player;
     std::vector<std::unique_ptr<Level> > levels;
     int currentLevel;
@@ -20,12 +20,16 @@ private:
     static std::vector<Country> initialCountries;
 
     explicit Game(const std::string &playername);
-public:
 
-    Game(const Game&) = delete;
-    Game& operator=(const Game&) = delete;
-    static Game& getInstance(const std::string &playername);
+public:
+    Game(const Game &) = delete;
+
+    Game &operator=(const Game &) = delete;
+
+    static Game &getInstance(const std::string &playername);
+
     static void destroyInstance();
+
     void start();
 };
 

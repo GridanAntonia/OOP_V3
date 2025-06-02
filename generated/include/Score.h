@@ -9,9 +9,11 @@ private:
     T points;
 
 public:
-    Score() : points(0) {}
+    Score() : points(0) {
+    }
 
-    explicit Score(T points) : points(points) {}
+    explicit Score(T points) : points(points) {
+    }
 
     void addPoints(T value) {
         points += value;

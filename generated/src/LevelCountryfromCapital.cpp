@@ -6,7 +6,7 @@ LevelCountryfromCapital::LevelCountryfromCapital()
     : Level("Guess the country that has this capital", 15, 45) {
 }
 
-void LevelCountryfromCapital::resetHint() const{
+void LevelCountryfromCapital::resetHint() const {
     shownletters.clear();
     if (!currentCountry.empty()) {
         shownletters.resize(currentCountry.size(), false);

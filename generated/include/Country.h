@@ -22,7 +22,7 @@ private:
 
 public:
     explicit Country(const std::string &name, const std::string &capital,
-                  Continent continent, bool popular = false);
+                     Continent continent, bool popular = false);
 
     Country(const Country &other);
 

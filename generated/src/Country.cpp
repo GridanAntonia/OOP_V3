@@ -1,7 +1,7 @@
 #include "Country.h"
 
 Country::Country(const std::string &name, const std::string &capital,
-           Continent continent, bool popular)
+                 Continent continent, bool popular)
     : name(name), capital(capital), continent(continent), popular(popular) {
 }
 
