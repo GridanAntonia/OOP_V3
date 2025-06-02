@@ -51,18 +51,19 @@ include(cmake/CopyHelper.cmake)
 add_executable(${MAIN_EXECUTABLE_NAME}
     main.cpp
     generated/src/Helper.cpp
-        generated/src/Tara.cpp
-        generated/src/Clasament.cpp
-        generated/src/Erori.cpp
-        generated/src/Joc.cpp
-        generated/src/Jucator.cpp
-        generated/src/Nivel.cpp
-        generated/src/NivelCapitalaEuropa.cpp
-        generated/src/NivelCapitalaGlobala.cpp
-        generated/src/NivelContinent.cpp
-        generated/src/NivelTaraDupaCapitala.cpp
-        generated/src/Scor.cpp
-        generated/src/TaraCuVariante.cpp
+        generated/src/Country.cpp
+        generated/src/Ranking.cpp
+        generated/src/Errors.cpp
+        generated/src/Game.cpp
+        generated/src/Player.cpp
+        generated/src/Level.cpp
+        generated/src/LevelwithEuropeanCapitals.cpp
+        generated/src/LevelwithAllCapitals.cpp
+        generated/src/LevelwithContinents.cpp
+        generated/src/LevelCountryfromCapital.cpp
+        generated/src/Score.cpp
+        generated/src/MultipleChoiceCountry.cpp
+        generated/src/LevelFactory.cpp
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )

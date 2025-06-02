@@ -6,7 +6,7 @@
 
 class ScoreFileException : public std::runtime_error {
 public:
-    explicit ScoreFileException(const std::string& message);
+    explicit ScoreFileException(const std::string &message);
 };
 
 class ScoreFileOpenError : public ScoreFileException {
